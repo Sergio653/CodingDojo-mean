@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit <%=dog.name %></h1>
+    <form action="/dogs/<%=dog._id%>" method="post">
+        <p>Name: <input type="text" name="name" value="<%= dog.name%>"></p>
+        <p>Breed: <input type="text" name="breed" value="<%= dog.breed%>"></p>
+        <p>Age: <input type="number"  name="age" value="<%= dog.age%>"></p>
+        <input type="submit" value="Submit!">
+    </form>
+</body>
+</html>
