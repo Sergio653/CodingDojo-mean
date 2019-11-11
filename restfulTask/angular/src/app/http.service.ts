@@ -7,19 +7,22 @@ import {HttpClient} from '@angular/common/http';
 export class HttpService {
 
   constructor(private _http: HttpClient) { 
-    this.getTask();
-    this.getTaskbyID("5dc77e620f8b1a44c09bc33f")
+    // this.getTask();
+    // this.getTaskbyID("5dc77e620f8b1a44c09bc33f")
 
   }
 
-  getTask(){
-        // our http response is an Observable, store it in a variable
-        let tempObservable = this._http.get('/tasks');
-        // subscribe to the Observable and provide the code we would like to do with our data from the response
-          tempObservable.subscribe(data => console.log("Got our tasks!", data));
+  getTasks(){
+        // // our http response is an Observable, store it in a variable
+        // let tempObservable = this._http.get('/tasks');
+        // // subscribe to the Observable and provide the code we would like to do with our data from the response
+        //   tempObservable.subscribe(data => console.log("Got our tasks!", data));
+
+    return this._http.get('/tasks')
   }
-  getTaskbyID(id: String){
-    let tempIDObservable = this._http.get('/tasks/'+id);
-    tempIDObservable.subscribe(data => console.log("Got the ID",data))
+  getTaskbyID(){
+    // let tempIDObservable = this._http.get('/tasks/'+id);
+    // tempIDObservable.subscribe(data => console.log("Got the ID",data))
+    return this._http.get('/tasks/5dc77e520f8b1a44c09bc33d')
   }
 }
