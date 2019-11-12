@@ -1,10 +1,21 @@
 <div>
   <h1>{{Maintitle}}</h1>
-  <p *ngFor="let task of tasks">{{task.title}} </p>
+  <button id="show_tasks" (click)="onButtonClick()">View Tasks</button>
+    <div *ngIf="show_tasks">
+      <h1>Test</h1>
+      <p *ngFor="let task of tasks">{{task.title}} <button id="showone" (click)="clickOne($event)" [value]="task._id">Show</button></p>
+        <div *ngIf="showOne">
+          ...
+            <div *ngFor="let one of OneTask">
+              <p>{{one.title}}</p>
+              <p>{{one.desc}}</p>
+            </div>
+        </div>
+    </div>
   <hr>
-
-  <p *ngFor="let one of OneTask">{{one.title}} </p>
-  
 </div>
 
+
+
 <router-outlet></router-outlet>
+

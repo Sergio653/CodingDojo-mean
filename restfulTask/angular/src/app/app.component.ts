@@ -10,12 +10,14 @@ export class AppComponent implements OnInit {
   Maintitle = 'restfulTask';
   tasks =[];
   OneTask =[];
+  show_tasks: Boolean
+  showOne: Boolean
   
   constructor(private _httpService: HttpService){}
 
   ngOnInit(){
     this.getTasksFromService()
-    this.getOneTask()
+
   }
   getTasksFromService() {
     let observable = this._httpService.getTasks()
@@ -24,9 +26,17 @@ export class AppComponent implements OnInit {
       this.tasks = data['data'];
     })
   }
-
-  getOneTask( ){
-    let obv = this._httpService.getTaskbyID()
+  onButtonClick(){
+    this.show_tasks = true;
+  }
+  clickOne(event: any){
+    this.showOne = true;
+    console.log(event['target']['value']);
+    this.getOneTask(event['target']['value'])
+    
+  }
+  getOneTask(id:String ){
+    let obv = this._httpService.getTaskbyID(id)
     obv.subscribe(data => {
       console.log('success',data);
       this.OneTask = data['data']
