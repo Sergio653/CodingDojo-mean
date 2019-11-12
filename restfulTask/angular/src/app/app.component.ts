@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   }
   clickOne(event: any){
     this.showOne = true;
-    console.log(event['target']['value']);
+    console.log(event['target']);
     this.getOneTask(event['target']['value'])
     
   }
