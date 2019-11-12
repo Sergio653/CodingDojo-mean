@@ -8,18 +8,24 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
   title = 'ninjagold';
+  activities = [];
+  total_gold = 0;
 
   constructor(private _httpService: HttpService){}
 
-  submitform(whichform: any): void { 
+  submitform(str: any): void { 
     const actions ={
       'FARM':[2,4],
       'CAVE':[5,6],
       'HOUSE':[7,9],
       'CASINO':[-100,200]
     }
-    console.log(Math.floor(Math.random()*(actions[whichform][1]) + actions[whichform][0]))
-    console.log(`Click event is working from form: ${whichform}`);
+    console.log(Math.floor(Math.random()*actions[str][1]-1+actions[str][0]))
+    var gold = Math.floor(Math.random()*actions[str][1]-1+actions[str][0])
+    this.total_gold+=gold
+    var act =`You went to the ${str} and spend ${gold}`
+    this.activities.push(act)
+    console.log(this.activities)
 }
 
   makebob(bobsname: any): void{

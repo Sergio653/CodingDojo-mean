@@ -8,7 +8,7 @@
   <div class='container'>
     <div class ='row'>
       <div class = 'col'>
-        <h1>Your gold is: 0</h1>
+        <h1>Your gold is: {{total_gold}}</h1>
       </div>
     </div>
     <div class ='row'>
@@ -36,9 +36,7 @@
     <div class ='row'>
       <div class = 'col'>
         <ul>
-          <li>Something Happened Maybe?</li>
-          <li>Something Happened Maybe?</li>
-          <li>Something Happened Maybe?</li>
+          <p *ngFor="let act of activities.reverse()">{{act}}</p>
         </ul>
       </div>
     </div>
