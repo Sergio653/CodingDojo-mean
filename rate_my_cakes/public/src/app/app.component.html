@@ -1,0 +1,41 @@
+<style>
+.nav{
+    max-height: 300px;
+    overflow-y: scroll; 
+}
+</style>
+<div class="container">
+  <h1>Rate my cakes</h1>
+  <div class="row justify-content-between">
+    <div class="col-md-4">
+      <h3>Submit a cake to be rated</h3>
+      <form class="form-group" (submit)="onSubmit()">
+        <p>Baker: <input class="form-control" type="text" name="baker" [(ngModel)]="newCake.baker" ></p>
+        <p>image: <input class="form-control" type="text" name="image" [(ngModel)]="newCake.img" ></p>
+        <input class="form-control" type="submit" value="Submit Cake!">
+        
+      </form>
+    </div>
+    <div class="col-md-6 nav">
+      <h3>View Cakes!</h3>
+      <div *ngIf="cakes">
+        <div *ngFor="let cake of cakes">
+            <h3>{{cake.baker}}</h3>
+            <img (click)=getOneCakefromService(cake._id) height="200px" width="300px" src="{{cake.img}}" alt="cake">
+            <form (submit)="onUpdate(cake._id)"> 
+              <p>Rating: <input type="number" name="rating" [(ngModel)]="Editcake.rating" min="1" max="5"></p>
+              <P>Review: <input type="text" name="review" [(ngModel)]="Editcake.review"></P>
+              <input type="submit" value="Rate!">
+            </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-cake *ngIf="showCake" [cakeToShow]="cake" [avg]="avg"></app-cake>
+
+
+<router-outlet></router-outlet>
+

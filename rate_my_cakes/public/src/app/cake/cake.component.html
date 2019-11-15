@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Baked by {{cakeToShow[0].baker}} </h1>
+            <img height="200px" width="300px"  src="{{cakeToShow[0].img}}" alt="">
+        </div>
+        <div class="col">
+            <h3>Average rating: {{avg}} </h3>
+            <ul *ngFor="let rating of cakeToShow[0].rating, let i=index">
+                <li>Review: {{cakeToShow[0].review[i]}} </li>
+                <li>Rating:  {{rating}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
