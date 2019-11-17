@@ -1,0 +1,15 @@
+<div>
+  <h1>{{Maintitle}}</h1>
+  
+  <button id="show_tasks" (click)="onButtonClick()">View Tasks</button>
+    <div *ngIf="show_tasks">
+      <h1>Test</h1>
+      <p *ngFor="let task of tasks">{{task.title}} <button id="showone" (click)="clickOne($event)" [value]="task._id">Show</button></p>
+    </div>
+  <hr>
+</div>
+<app-task *ngIf='showOne' [taskToShow]='OneTask'></app-task>
+
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+    <button (click)="makebob('bob')">Make A bob</button>
+    <button (click)="getBobs()">Get Bobs</button>
+  </h1>
+  <div class='container'>
+    <div class ='row'>
+      <div class = 'col'>
+        <h1>Your gold is: {{total_gold}}</h1>
+      </div>
+    </div>
+    <div class ='row'>
+      <div class = 'col'>
+        <h2>Farm</h2>
+        <button (click)="submitform('FARM')">Use Farm</button>
+
+      </div>
+      <div class = 'col'>
+        <h2>Cave</h2>
+        
+        <button (click)="submitform('CAVE')">Use Cave</button>
+      </div>
+      <div class = 'col'>
+        <h2>House</h2>
+        <button (click)="submitform('HOUSE')">Use House</button>
+
+      </div>
+      <div class = 'col'>
+        <h2>Casino</h2>
+        <button (click)="submitform('CASINO')">Use Casino</button>
+
+      </div>
+    </div>
+    <div class ='row'>
+      <div class = 'col'>
+        <ul>
+          <p *ngFor="let act of activities.reverse()">{{act}}</p>
+        </ul>
+      </div>
+    </div>
+  </div> 
+
+<router-outlet></router-outlet>
+
+
