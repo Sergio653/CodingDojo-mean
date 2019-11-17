@@ -1,0 +1,10 @@
+<h1>Mine ShintoCoins</h1>
+
+<p>Here you can min ShintoCoins by being the first to solve the algorithm:</p>
+
+<p>{{question}}</p>
+<form (submit)="onSubmit()">
+    <input type="text" [(ngModel)]="guess"  name="guess">
+    <input type="Submit" value="Mine!">
+</form>
+<p *ngIf="result">{{result}}</p>
