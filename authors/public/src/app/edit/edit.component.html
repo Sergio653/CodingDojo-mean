@@ -1,0 +1,9 @@
+<button [routerLink]="['/all']">Home</button>
+<p>Add Edit author:</p>
+
+
+<form (submit)="onUpdate(author[0]?._id)">
+    <p>Name: <input type="text" name="name" [(ngModel)]="editAuthor.name" value="{{author.name}}"></p>
+    <input type="submit" value="Edit Authorr!">
+</form>
+<button [routerLink]="['/all']">Cancel</button>

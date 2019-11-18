@@ -1,0 +1,11 @@
+<button [routerLink]="['/all']">Home</button>
+
+<p>Add a new author:</p>
+
+<form (submit)="onSubmit()">
+    <p>Name: <input type="text" name="name" [(ngModel)]="newAuthor.name"  ></p>
+    <input type="submit" value="Submit">
+    <button [routerLink]="['/all']">Cancel</button>
+</form>
+
+
