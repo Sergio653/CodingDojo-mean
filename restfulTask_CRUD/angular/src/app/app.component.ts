@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   }
   clickOne(event: any){
     this.showEdit = true;
-    // console.log(event['target']);
+    console.log(event);
     this.getOneTask(event['target']['value'])
     
   }

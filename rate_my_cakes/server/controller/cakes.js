@@ -18,7 +18,6 @@ module.exports = {
             .catch((err) => res.json(err))
     },
     update: (req,res) => {
-        console.log("*********************************")
         console.log(req.body.rating)
         console.log(req.body)
         Cake.findOneAndUpdate({_id:req.params.id},{$push: {review: req.body.

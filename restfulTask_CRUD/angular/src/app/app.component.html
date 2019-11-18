@@ -16,7 +16,7 @@
       <h4>Task List</h4>
       <div class="card p-3" *ngFor="let task of tasks">
         <h4 >{{task.title}}</h4>
-        <button class="btn-primary" button id="showone" (click)="clickOne($event)" [value]="task._id">Edit</button>
+        <button class="btn-primary" (click)="clickOne($event)" [value]="task._id">Edit</button>
         <form class="form-group" (submit)="onDelete(task._id)">
           <input class="form-control btn-danger" type="submit" value="Delete Task">
         </form>
