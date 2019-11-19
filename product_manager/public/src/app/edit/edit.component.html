@@ -1,0 +1,7 @@
+<h1>Edit Product</h1>
+<form (submit)="onUpdate(product._id)" class="form-group col-md-6">
+    <p>Title: <input class="form-control" [(ngModel)]="product.title" type="text" value="{{product.title}}"  name="title"></p>
+    <p>Price: <input class="form-control" [(ngModel)]="product.price" type="Number" value="{{product.price}}" name="price"></p>
+    <p>Image Url: <input class="form-control" [(ngModel)]="product.imgurl" type="text" value="{{product.imgurl}}" name="imgurl"></p>
+    <input  class="form-control" type="submit" value="Edit">
+</form>

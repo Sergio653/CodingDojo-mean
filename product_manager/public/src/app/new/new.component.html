@@ -1,0 +1,8 @@
+<h1>Add a Product</h1>
+{{newProduct |json}}
+<form (submit)="onSubmit()" class="form-group col-md-6">
+    <p>Title: <input class="form-control" [(ngModel)]="newProduct.title" type="text" name="title"></p>
+    <p>Price: <input class="form-control" [(ngModel)]="newProduct.price" type="Number" name="price"></p>
+    <p>Image Url: <input class="form-control" [(ngModel)]="newProduct.imgurl" type="text" name="imgurl"></p>
+    <input class="form-control" type="submit" value="Create">
+</form>

@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Products List</h1>
+    <div class="row">
+
+            
+            <div class="card col" *ngFor="let product of products">
+            
+                <h1>{{product.title}}</h1>
+                <h1>${{product.price}} </h1>
+                <a [routerLink] = "['edit', product._id]">Edit</a>
+                <form (submit)="onDelete(product._id)">
+                    <input type="submit" value="Delete">
+                </form>
+                <img src="{{product.imgurl}}" alt="img" height="300px" width="400px">
+            </div>
+    </div>
+</div>
